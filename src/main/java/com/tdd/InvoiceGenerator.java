@@ -2,7 +2,7 @@ package com.tdd;
 
 public class InvoiceGenerator {
     public static void main(String[] args) {
-        System.out.println("Welcome to cab invoice generator");
+        System.out.println("* Welcome to cab invoice generator *");
     }
 
     /**
@@ -32,5 +32,27 @@ public class InvoiceGenerator {
             totalFare += this.generateInvoice(ride);
         }
         return totalFare;
+    }
+
+    /**
+     * Method to get no. of rides
+     *
+     * @param rides - array of rides
+     * @return - length of array
+     */
+    public int getNumberOfRides(Rides[] rides) {
+
+        return rides.length;
+    }
+
+    /**
+     * Method to calculate average ride fare
+     *
+     * @param rides - array of rides
+     * @return - length of array
+     */
+    public double getAvarageRideFare(Rides[] rides) {
+
+        return calculateTotalFare(rides) / rides.length;
     }
 }
