@@ -42,17 +42,20 @@ public class CabInvoiceTest {
 
         Rides[] rides = { new Rides(4, 5), new Rides(0.2, 1) };
         InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
-        double totalFare = invoiceGenerator.calculateTotalFare(rides);
+        double totalFare = invoiceGenerator.calculateTotalFare(rides).totalFare;
         Assertions.assertEquals(50, totalFare, 0.0);
     }
 
+    /**
+     * Test Method to return total fare, number of rides and average fare
+     */
     @Test
     public void sizeAndAverageFare_of_Multiplerides() {
         InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
 
         Rides[] rides = { new Rides(4, 5), new Rides(0.2, 1), new Rides(12, 15) };
 
-        double totalFare = invoiceGenerator.calculateTotalFare(rides);
+        double totalFare = invoiceGenerator.calculateTotalFare(rides).totalFare;
         int numberOfRides = invoiceGenerator.getNumberOfRides(rides);
         double averageFare = invoiceGenerator.getAvarageRideFare(rides);
 
