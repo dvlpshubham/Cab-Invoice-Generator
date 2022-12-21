@@ -10,16 +10,24 @@ public class InvoiceGenerator {
     }
 
     /**
-     * Method to calculate fare Using formula = 10*distance + ride time If fare is
-     * less than 5, fare set to 5.
      *
-     * @param ride - ride with distance and time values
+     * Method to calculate fare Using formula = 10*distance + ride time If fare is
+     * less than 5, fare set to 5. for normal flight and fare = 20*distance + 2*time
+     * for Premium Ride
+     *
+     * @param ride - ride with distance and time and isPremium values
      * @return - fare, if less than 5 fare = 5
      */
     public double generateInvoice(Rides ride) {
-        double fare = 10 * ride.distance + ride.time;
+        if (ride.isPremium) {
+            double fare = 10 * ride.distance + ride.time;
 
-        return fare > 5 ? fare : 5;
+            return fare > 5 ? fare : 5;
+        } else {
+        }
+        double fare = 15 * ride.distance + 2 * ride.time;
+
+        return fare > 20 ? fare : 20;
     }
 
     /**
